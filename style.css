@@ -1,35 +1,153 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightgray;
-    color: black;
+    background-image: url("images/desert-trail.jpeg");    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: darkslategray;
     margin: 20px;
 }
 
 header {
-    background-color: navy;
+    background-color: darkslategray;
     color: white;
     padding: 20px;
+    border-radius: 5px;
+    border-color: tan;
 }
+header ,
+    .page-layout {
+        width: 100%;
+        max-width: 980px;
+        box-sizing: border-box;
+      }
 
 main {
     max-width: 800px;
+    flex:1; 
+    min-width: 0;
 }
 
 section {
-    background-color: white;
-    border: 1px solid gray;
+    background-color: ivory;
     padding: 15px;
     margin-top: 20px;
+    border-radius: 5px;
+    border-color: tan;
+    border: 2px solid;
 }
 
 h2 {
-    color: navy;
+    color: darkolivegreen;
 }
 
 a {
-    color: darkblue;
+    color: midnightblue;
 }
 
 footer {
     margin-top: 20px;
+    padding: 15px;
+    background-color: ivory;
+    color:darkslategray;
+    max-width: 980px;
+    box-sizing: border-box;
+}
+/*Playing around with flex box*/
+.page-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;    }   
+
+.page-links {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(138, 182, 196);
+    padding: 15px;
+    width: 160px;
+    box-sizing: border-box;
+    flex-shrink: 0; 
+    border: 2px solid black;
+    flex-direction: column;
+/*fit flex box menu right up to Main*/ 
+}
+main > section:first-child {
+    margin-top: 0;
+}
+/*Specific styling for the About Me section*/
+.experience .dates {
+    font-style: italic;
+    color: darkslategray    ;
+}
+.experience article + article {
+    margin-top: 20px;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+}
+
+
+/*Trying out the hover effect*/
+.page-links a {
+    padding: 10px
+    text-decoration: none;
+}
+
+.page-links a:hover {
+    background-color: whitesmoke;
+    color: midnightblue;
+}
+
+.page-links a:focus-visible {
+    outline: 3px solid darkorange;
+    outline-offset: 2px;
+}
+
+.page-links a[aria-current="page"] {
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+}
+/*Technical skills style adjustment to their list*/
+.skills dt {
+    font-weight: bold;
+    color:darkolivegreen;
+    margin-top: 15px;
+}
+
+.skills dd {
+    margin-left: 0px;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.skills dt:first-child {
+    margin-top:0;
+}
+/*Trying Media for responsive design*/
+@media (max-width: 700px) {
+    body {
+        margin: 10px;
+        background-attachment:scroll;
+    }
+
+    .page-layout {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .page-links {
+        width: 100%
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    main {
+        width: 100%;
+    }
+}
+
+.training li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
